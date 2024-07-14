@@ -1,8 +1,9 @@
 import pandas as pd
+import numpy as np
 
-bio_data={'firstname':['Shoaib','Ali','Ahmed','Fahad','Sohail','Rabia','Fahad','Ali'],
+bio_data={'firstname':['Shoaib','Ali','Sania','Fahad','Sohail','Rabia','Fahad','Ali'],
           'lastname':['Naqvi','Khan','Ali','Mustafa','Khan','Anum','Mustafa','Kamran'],
-          'gender':['Male','Male','Male','Male','Male','Female','Male','Male'],
+          'gender':['Male','Male','Female','Male','Male','Female','Male','Male'],
           'Age':[21,21,30,21,25,42,30,42],
           'Height':[6.1,5.7,5.2,5.8,5.7,5.4,6.0,5.6],
           'Weight':[70,75,66,80,98,102,98,87]
@@ -28,5 +29,15 @@ print(bio_data_frame)
     # unique=bio_data_frame.drop_duplicates(subset=['firstname','lastname'])
 # print(unique)
 # print(bio_data_frame['Age'].value_counts(sort=True))
-print(bio_data_frame['Age'].value_counts(normalize=True))
-
+# print(bio_data_frame['Age'].value_counts(normalize=True))
+# print(bio_data_frame.groupby("gender")["Weight"].mean())
+# print(bio_data_frame.groupby("gender")["Weight"].agg([min,max,sum]))
+# print(bio_data_frame.groupby(["gender","Age"])[["Weight","Height"]].mean())
+# store = np.array([7, 8, 4, 6])
+# cost  = np.array([76, 87, 68, 88])
+# np_cols =np.column_stack((store, cost))
+# print(np_cols)
+# np_heights = np.array([[1.60,1.75],[1.56,1.70],[1.49,1.68]])
+# print(np.corrcoef(np_heights[:,0], np_heights[:,1]))
+x = np.array([3.6, 3.99, 3.91])
+print(np.std(x))
